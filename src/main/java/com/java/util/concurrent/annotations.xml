@@ -1,0 +1,5 @@
+<root>
+    <item name='java.util.concurrent.ExecutorService void shutdown()'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
