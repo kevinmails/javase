@@ -3,6 +3,7 @@ package com.test.java8;
 
 import org.apache.commons.httpclient.NameValuePair;
 
+import java.security.Security;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -21,9 +22,10 @@ public class MapToList {
         map.put("name", "kevin");
         map.put("age", "12");
 
-        NameValuePair[] list = map.entrySet().stream().map(entry -> new NameValuePair(entry.getKey(), entry.getValue())).toArray(NameValuePair[]::new);
 
-        System.out.println(list.toString());
+        NameValuePair[] arr = map.entrySet().stream().map(entry -> new NameValuePair(entry.getKey(), entry.getValue())).toArray(NameValuePair[]::new);
+
+        System.out.println(arr.length);
 
 
     }

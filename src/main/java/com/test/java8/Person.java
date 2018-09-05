@@ -1,11 +1,14 @@
 package com.test.java8;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 /**
  * Created by KEVIN on 2016/11/30.
  */
 public class Person {
+
+    private Map.Entry<String,String> entry;
 
     private String name;
     private int age;
@@ -24,6 +27,10 @@ public class Person {
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public Person(Map.Entry<String, String> entry) {
+        this.entry = entry;
     }
 
     public String getName() {

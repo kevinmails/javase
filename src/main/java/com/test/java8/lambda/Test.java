@@ -8,8 +8,10 @@ package com.test.java8.lambda;
 public class Test {
     public static void main(String[] args) {
 
-    Pilot pilot = Pilot.builder().name("kevin").build();
-    pilot.introduce(type -> System.out.println(type));
+        Pilot pilot = Pilot.builder().name("kevin").build();
+        pilot.introduce(System.out::println);
+
+
 
     }
 }

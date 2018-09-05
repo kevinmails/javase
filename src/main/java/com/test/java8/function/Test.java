@@ -1,5 +1,8 @@
 package com.test.java8.function;
 
+import com.test.java8.identity.IdentityCard;
+import com.test.java8.identity.IdentityCardUtil;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -36,7 +39,6 @@ public class Test {
                 System.out.println(s2);
             }
         });
-
 
     }
 

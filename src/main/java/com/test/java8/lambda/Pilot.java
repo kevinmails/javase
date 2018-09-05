@@ -1,6 +1,8 @@
 package com.test.java8.lambda;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 /**
  * @author 陈彬
@@ -8,6 +10,8 @@ import lombok.Builder;
  * Time 13:32
  */
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Pilot {
 
     private String name;
@@ -16,10 +20,8 @@ public class Pilot {
 
 
 
-    public void introduce(Airplane airplane) {
-
-
-        airplane.fly(name);
+    public void introduce(Airplane action) {
+        action.fly(name);
     }
 
 }

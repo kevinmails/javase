@@ -6,26 +6,20 @@ import java.util.Arrays;
 import java.util.Objects;
 
 /**
- * Created by KEVIN on 2017/6/26.
+ * @author KEVIN
  */
 public interface FileUtil {
 
     static void main(String[] args) {
 
 
-        File f = new File("D:\\mydir\\新建文件夹32123");
+        File f = new File("D:\\mydir\\新建文件夹");
         System.out.println(f.getName());
 
+
+        System.out.println("创建文件夹：" + createDirs("D:\\mydir\\新建文件夹"));
+
 //        System.out.println("removed:" + remove(f));
-
-        System.out.println("创建文件夹：" + createDirs("D:\\mydir\\新建文件夹??"));
-
-        String s = "/data/appLogs/dubbo/dubbo.log";
-
-
-        s = s.substring(0, s.lastIndexOf(s));
-        System.out.println(s);
-
 
     }
 
@@ -43,11 +37,16 @@ public interface FileUtil {
         if (file.isFile()) {
             return file.delete();
         }
-        File[] fileUtilArr = file.listFiles();
-        Arrays.asList(fileUtilArr).forEach(FileUtil::remove);
+        Arrays.asList(file.listFiles()).forEach(FileUtil::remove);
         return file.delete();
     }
 
+    /**
+     * 创建级联文件夹
+     *
+     * @param dirPath
+     * @return
+     */
     static boolean createDirs(String dirPath) {
         if (Objects.equals("", dirPath) || Objects.equals(null, dirPath)) {
             return false;
