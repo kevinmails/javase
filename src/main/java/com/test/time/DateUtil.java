@@ -1,17 +1,16 @@
 package com.test.time;
 
-import com.sun.istack.internal.NotNull;
-
-import java.time.*;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 
 /**
  * @author 陈彬
- *         Date 2017/11/3
- *         Time 11:40
+ * Date 2017/11/3
+ * Time 11:40
  */
 public interface DateUtil {
     public static void main(String[] args) {
@@ -48,7 +47,7 @@ public interface DateUtil {
      * @param endDate   结束日期,格式:yyyyMMdd e.g. 20171105
      * @return 两日期间隔天数
      */
-    static long daysBetween(@NotNull String startDate, @NotNull String endDate, DateUnit unit) {
+    static long daysBetween(String startDate, String endDate, DateUnit unit) {
         LocalDate start = LocalDate.parse(startDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
         LocalDate end = LocalDate.parse(endDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
         long count = ChronoUnit.DAYS.between(start, end);
@@ -89,7 +88,7 @@ public interface DateUtil {
      * @param endDate   结束日期
      * @return 两日期间隔天数
      */
-    public static long daysBetween(@NotNull LocalDate startDate, @NotNull LocalDate endDate) {
+    public static long daysBetween(LocalDate startDate, LocalDate endDate) {
         return ChronoUnit.DAYS.between(startDate, endDate);
 
     }
@@ -99,14 +98,14 @@ public interface DateUtil {
      * @param endDate
      * @return
      */
-    static long until(@NotNull String startDate, @NotNull String endDate) {
+    static long until(String startDate, String endDate) {
         LocalDate start = LocalDate.parse(startDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
         LocalDate end = LocalDate.parse(endDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
         return start.until(end, ChronoUnit.DAYS);
     }
 
 
-    static long until(@NotNull String endDate) {
+    static long until(String endDate) {
         LocalDate end = LocalDate.parse(endDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
         return LocalDate.now().until(end, ChronoUnit.MILLIS);
     }

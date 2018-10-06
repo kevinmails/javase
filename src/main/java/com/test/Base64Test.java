@@ -1,26 +1,21 @@
 package com.test;
 
 import org.apache.commons.codec.binary.Base64;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
-
-import java.io.IOException;
 
 /**
  * @author 陈彬
- *         Date 2017/7/7
- *         Time 10:50
+ * Date 2017/7/7
+ * Time 10:50
  */
 public class Base64Test {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         String src = "hello word!";
 
-        BASE64Encoder encoder = new BASE64Encoder();
-        String target = encoder.encode(src.getBytes());
-        System.out.println(target);
-
+        Base64 encoder = new Base64();
+        byte[] target = encoder.encode(src.getBytes());
+        System.out.println(new String(target));
 
 
         Base64 base64 = new Base64();
@@ -28,9 +23,9 @@ public class Base64Test {
         String myStr = new String(bytes);
         System.out.println(myStr);
 
-        BASE64Decoder decoder = new BASE64Decoder();
+        Base64 decoder = new Base64();
 
-        System.out.println(new String(decoder.decodeBuffer(myStr)));
+        System.out.println(new String(decoder.decode(myStr)));
 
 
     }

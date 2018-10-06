@@ -1,4 +1,4 @@
-package com.test;
+package com.test.java11;
 
 import redis.clients.jedis.Jedis;
 
@@ -11,7 +11,7 @@ public class JedisTest {
 
     public static void main(String[] args) {
 
-        Jedis jedis = new Jedis("imcbb.com",65379);
+        var jedis = new Jedis("imcbb.com",65379);
         jedis.auth("Rediss!!Pass010");
         jedis.setex("foo", 30, "test");
         String value = jedis.get("foo");
