@@ -11,21 +11,15 @@ public class Base64Test {
 
     public static void main(String[] args) {
 
-        String src = "hello word!";
+        var src = "hello word!";
 
-        Base64 encoder = new Base64();
-        byte[] target = encoder.encode(src.getBytes());
-        System.out.println(new String(target));
+        var encoder = new Base64();
+        var target = encoder.encodeAsString(src.getBytes());
+        System.out.println(target);
 
+        var decoder = new Base64();
 
-        Base64 base64 = new Base64();
-        byte[] bytes = base64.encode(src.getBytes());
-        String myStr = new String(bytes);
-        System.out.println(myStr);
-
-        Base64 decoder = new Base64();
-
-        System.out.println(new String(decoder.decode(myStr)));
+        System.out.println(new String(decoder.decode(target)));
 
 
     }
