@@ -3,13 +3,16 @@ package com.test.paging;
 import java.util.AbstractCollection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
+ * 对数据集合进分页获取
+ *
  * @author 陈彬
- *         Date 2017/11/9
- *         Time 18:11
- *         对数据集合进分页获取
+ * Date 2017/11/9
+ * Time 18:11
+ * @since jdk1.8
  */
 public class PagingList<T> {
 
@@ -52,9 +55,7 @@ public class PagingList<T> {
         if (pageSize <= 0) {
             throw new RuntimeException("Paging size must be greater than zero.");
         }
-        if (null == pageResult) {
-            throw new RuntimeException("Paging resource list must be not null.");
-        }
+        Objects.requireNonNull(pageResult, "Paging resource list must be not null.");
         if (pageResult.size() % pageSize > 0) {
             this.totalPage = (pageResult.size() / pageSize) + 1;
         } else {
