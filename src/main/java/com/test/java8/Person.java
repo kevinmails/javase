@@ -8,14 +8,21 @@ import java.util.Map;
  */
 public class Person {
 
-    private Map.Entry<String,String> entry;
+    private Map.Entry<String, String> entry;
 
     private String name;
     private int age;
+    private String nickname;
 
     private BigDecimal height;
 
     public Person() {
+    }
+
+    public Person(String name, String nickname) {
+        this.name = name;
+        this.nickname = nickname;
+        System.out.println(this.name + "&" + this.nickname);
     }
 
     public Person(String name, int age, BigDecimal height) {

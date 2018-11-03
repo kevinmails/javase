@@ -13,6 +13,7 @@ public class Test {
 
         System.out.println(card.toString());
         System.out.println(card.getSex().getCode());
+        System.out.println(card.getAge());
 
 
     }

@@ -1,5 +1,6 @@
 package com.test.java8.function;
 
+import com.test.java8.Person;
 import com.test.java8.identity.IdentityCard;
 import com.test.java8.identity.IdentityCardUtil;
 
@@ -22,23 +23,17 @@ public class Test {
         FunctionDemo.modifyTheValue(a, c -> c + a);
 
         Map<String, String> map = new HashMap<>();
-        map.put("a", "a");
-        map.put("b", "b");
-        map.put("c", "c");
-        map.put("d", "d");
+        map.put("a", "a1");
+        map.put("b", "b1");
+        map.put("c", "c1");
+        map.put("d", "d1");
         map.forEach((k, v) -> {
                     System.out.println(k);
                     System.out.println(v);
                 }
         );
 
-        map.forEach(new BiConsumer<String, String>() {
-            @Override
-            public void accept(String s, String s2) {
-                System.out.println(s);
-                System.out.println(s2);
-            }
-        });
+        map.forEach(Person::new);
 
     }
 
