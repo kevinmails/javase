@@ -1,6 +1,7 @@
 package com.test.java8;
 
 import java.util.Random;
+import java.util.Set;
 
 /**
  * 生成指定区间的随机数
@@ -26,6 +27,21 @@ public interface RandomUtil {
 
     static int getRandomIntInRange(int min, int max) {
         return r.ints(min, (max + 1)).limit(1).findFirst().getAsInt();
+    }
+
+    /**
+     * 生成排除{@code exclude} 在内的随机数
+     *
+     * @param min
+     * @param max
+     * @param exclude
+     * @return Random number
+     */
+    static int getRandomIntInRangeWithExclude(int min, int max, Set<Integer> exclude) {
+        if (min == max) {
+            throw new IllegalArgumentException("min and max can not equal");
+        }
+        return r.ints(min, (max + 1)).filter((r) -> !exclude.contains(r)).limit(1).findFirst().getAsInt();
     }
 
     /**

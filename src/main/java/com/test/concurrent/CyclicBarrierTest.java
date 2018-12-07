@@ -1,7 +1,6 @@
 package com.test.concurrent;
 
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -10,12 +9,17 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class CyclicBarrierTest {
     static AtomicInteger box = new AtomicInteger(0);
+    static ExecutorService executor = null;
     static CyclicBarrier barrier = new CyclicBarrier(2, new BarrierAction());
     private static Thread xiaoHong = null;
     private static Thread xiaoMing = null;
 
     public static void main(String[] args) {
-        xiaoMing = new Thread(() -> {
+
+        executor = new ThreadPoolExecutor(2, 2, 1000, TimeUnit.SECONDS, new LinkedBlockingQueue<>(2));
+
+
+        executor.execute(() -> {
 
             for (int i = 1; i <= 10; i++) {
                 box.incrementAndGet();
@@ -29,10 +33,9 @@ public class CyclicBarrierTest {
                 e.printStackTrace();
             }
         });
-        xiaoMing.start();
 
 
-         xiaoHong = new Thread(() -> {
+        executor.execute(() -> {
 
             for (int i = 1; i <= 10; i++) {
                 box.incrementAndGet();
@@ -47,13 +50,13 @@ public class CyclicBarrierTest {
                 e.printStackTrace();
             }
         });
-        xiaoHong.start();
 
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
     static class BarrierAction implements Runnable {
@@ -63,9 +66,7 @@ public class CyclicBarrierTest {
             System.out.println("本轮操作后box里有" + box.get() + "个apple");
             if (box.get() < 100) {
                 System.out.println("box未满，接着放...");
-//                barrier.reset();
-//                xiaoMing.start();
-//                xiaoHong.start();
+
             }
 
         }

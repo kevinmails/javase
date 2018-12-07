@@ -1,6 +1,7 @@
 package com.test.java8;
 
-import java.util.Random;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author 陈彬
@@ -10,14 +11,12 @@ import java.util.Random;
 public class RandomTest {
 
     public static void main(String[] args) {
-        Random r = new Random();
-        for(;;){
-            int radom = r.ints(2, (5 + 1)).findFirst().getAsInt();
+        for (; ; ) {
+            Set<Integer> set = new HashSet<>(1);
+            set.add(1);
+            int radom = RandomUtil.getRandomIntInRangeWithExclude(1, 2, set);
             System.out.println(radom);
-
         }
-
-
 
     }
 }
