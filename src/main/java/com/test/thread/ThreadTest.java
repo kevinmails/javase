@@ -2,7 +2,6 @@ package com.test.thread;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
-import java.util.Arrays;
 import java.util.concurrent.*;
 
 /**
@@ -45,6 +44,8 @@ public class ThreadTest {
 
 
         }
+
+        Executors.newWorkStealingPool();
 
 
     }
