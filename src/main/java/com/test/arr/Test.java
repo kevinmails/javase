@@ -1,8 +1,5 @@
 package com.test.arr;
 
-import org.apache.commons.lang.StringUtils;
-
-import java.io.File;
 import java.util.Arrays;
 
 /**
@@ -21,7 +18,6 @@ public class Test {
         Arrays.asList(lineArr).forEach(
                 arr -> System.out.println(arr)
         );
-
 
 
 

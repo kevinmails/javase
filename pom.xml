@@ -32,6 +32,7 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>15.0</version>
+            <version>27.1-jre</version>
         </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
@@ -47,6 +48,11 @@
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.26</version>
         </dependency>
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
@@ -108,6 +114,7 @@
             <version>2.9.7</version>
         </dependency>
         <dependency>
+<<<<<<< HEAD
             <groupId>org.openjdk.jmh</groupId>
             <artifactId>jmh-core</artifactId>
             <version>1.21</version>
@@ -117,6 +124,11 @@
             <artifactId>jmh-generator-annprocess</artifactId>
             <version>1.21</version>
             <scope>test</scope>
+=======
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+>>>>>>> 604f1fcb43dcd9be10dd59108bc58b8ec45e0954
         </dependency>
 
 
