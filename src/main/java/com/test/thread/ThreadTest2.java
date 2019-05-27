@@ -31,6 +31,7 @@ public class ThreadTest2 {
             for (int i = 0; i < 100000000; i++) {
 
                 System.out.println(Thread.currentThread().getName() + "搬砖中...");
+                System.out.println("PoolSize:" + pool.getPoolSize() +" CorePoolSize:" + pool.getCorePoolSize());
                 if (Thread.currentThread().isInterrupted()) {
                     System.out.println("老板跑路了，没人发工资了，还干啥，不干了！");
                     return;
