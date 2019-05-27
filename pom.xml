@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>19.0</version>
+            <version>27.1-jre</version>
         </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
@@ -31,6 +31,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+            <version>15.0</version>
             <version>27.1-jre</version>
         </dependency>
         <dependency>
@@ -113,9 +114,21 @@
             <version>2.9.7</version>
         </dependency>
         <dependency>
+<<<<<<< HEAD
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>1.21</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>1.21</version>
+            <scope>test</scope>
+=======
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
+>>>>>>> 604f1fcb43dcd9be10dd59108bc58b8ec45e0954
         </dependency>
 
 
@@ -131,6 +144,7 @@
                     <target>11</target>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
