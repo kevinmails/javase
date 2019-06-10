@@ -41,7 +41,7 @@ public class ThreadPoolTest {
             for (int i = 0; i < 100000000; i++) {
                 System.out.println("PoolSize:" + pool.getPoolSize() + " CorePoolSize:" + pool.getCorePoolSize());
                 System.out.println(Thread.currentThread().getName() + "搬砖中...");
-                if (Thread.interrupted()) {
+                if (Thread.currentThread().isInterrupted()) {
                     System.out.println("这一定不是真相，一家人都指望我这点工资呢，好好看活，再看看吧！");
                 }
             }

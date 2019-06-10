@@ -27,15 +27,15 @@ public class MonitorThreadPoolExecutor extends ThreadPoolExecutor {
     @Override
     protected void beforeExecute(Thread t, Runnable r) {
         System.out.println("线程："+ t.getName() + "开始执行...");
+        System.out.println(t.getName() + " poolSize:" + this.getPoolSize() + " corePoolSize:" + this.getCorePoolSize()
+                + " queueSize:" + this.getQueue().size());
     }
 
     @Override
     protected void afterExecute(Runnable r, Throwable t) {
-
     }
 
     @Override
     protected void terminated() {
-
     }
 }
