@@ -5,7 +5,6 @@ package com.test.callback;
  */
 @FunctionalInterface
 public interface CallBack {
-
     void returnOrder(String expressOrderNo);
 
     boolean equals(Object obj);
