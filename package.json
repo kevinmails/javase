@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "测试工程",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "husky": "^4.0.7"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.4",
+    "@commitlint/config-conventional": "^8.3.4",
     "cz-conventional-changelog": "^3.0.2"
   },
   "scripts": {
@@ -25,5 +29,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }  
   }
 }
