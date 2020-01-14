@@ -12,7 +12,11 @@ public class StringUpdate {
         var repeatedString = string.repeat(3);
         System.out.println(repeatedString);
 
+<<<<<<< HEAD
         boolean isBlankStr = " abaddd ".isBlank();
+=======
+        boolean isBlankStr = " abadd ".isBlank();
+>>>>>>> 4703081205b7dcc50f248d0507ca837daa924283
         System.out.println(isBlankStr);
 
 
