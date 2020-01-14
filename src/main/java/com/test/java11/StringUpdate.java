@@ -12,7 +12,7 @@ public class StringUpdate {
         var repeatedString = string.repeat(3);
         System.out.println(repeatedString);
 
-        boolean isBlankStr = " abaddd ".isBlank();
+        boolean isBlankStr = " abaddds ".isBlank();
 
         System.out.println(isBlankStr);
 
