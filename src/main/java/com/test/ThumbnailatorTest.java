@@ -15,6 +15,5 @@ public class ThumbnailatorTest {
 
 
         Thumbnails.of("C:\\Users\\KEVIN\\Desktop\\id.jpg").scale(0.5f).outputQuality(0.2f).toFile("C:\\Users\\KEVIN\\Desktop\\id2.jpg");
-
     }
 }
