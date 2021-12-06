@@ -23,5 +23,13 @@ public class ReadFileLines {
         }
         System.out.println(Charset.forName("GBK").name());
 
+        long fs = 0;
+        try {
+            fs = Files.size(Paths.get("C:\\Users\\kevin.000\\Desktop\\Dubbo_JStack.log.2021-10-22_14_36_19"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.print(fs);
+
     }
 }

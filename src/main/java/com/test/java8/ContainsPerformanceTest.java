@@ -9,6 +9,7 @@ import java.util.Set;
  * @author kevin.chen
  * Date 2018/12/6
  * Time 17:02
+ * 对比list和set的查询性能
  */
 public class ContainsPerformanceTest {
     public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class ContainsPerformanceTest {
         List<Integer> list = new ArrayList<>();
         Set<Integer> set = new HashSet<>();
 
-
+        System.out.println("数据准备中...");
         for (int i = 0; i < 10000000; i++) {
 
             int r = RandomUtil.getRandomIntInRange(1, 5000000);
@@ -26,7 +27,7 @@ public class ContainsPerformanceTest {
         }
 
 
-        System.out.println("数据准备完成");
+        System.out.println("数据准备完成.");
 
         long bg = System.currentTimeMillis();
         System.out.println("list查找到:" + list.contains(6666));
