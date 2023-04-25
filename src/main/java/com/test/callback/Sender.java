@@ -15,6 +15,7 @@ public class Sender {
 
     private String name;
 
+    @FunctionalInterface
     interface Receiver {
 
         /**
