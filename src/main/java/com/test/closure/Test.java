@@ -22,7 +22,7 @@ public class Test {
          * 闭包
          */
         //            String s1 = "s1";
-        MyFoo.Foo foo = new MyFoo.Foo() {
+        MyFoo.Foo<String> foo = new MyFoo.Foo() {
             @Override
             public void test(Object str) {
                 out.println("foo:" + str);

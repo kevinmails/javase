@@ -11,6 +11,10 @@ public class MyFoo {
 
     private String fooStr = "fooStr";
 
+    /**
+     * 成员内部类
+     * @param <T>
+     */
     class InnerFoo<T> implements Foo<T> {
 
 //        fooStr = "abc";
