@@ -4,10 +4,10 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class MyUUID {
+//    static final AtomicLong counter = new AtomicLong(System.nanoTime());
+    static final AtomicLong counter = new AtomicLong(System.currentTimeMillis()*1000);
 
     public static String getUUID() {
-        final AtomicLong counter = new AtomicLong(System.nanoTime());
-//        final AtomicLong counter = new AtomicLong(System.currentTimeMillis());
         return String.valueOf(counter.getAndIncrement());
     }
 
