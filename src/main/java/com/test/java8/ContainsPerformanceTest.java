@@ -10,6 +10,7 @@ import java.util.Set;
  * Date 2018/12/6
  * Time 17:02
  * 对比list和set的查询性能
+ *  结论： set的查找性能更好
  */
 public class ContainsPerformanceTest {
     public static void main(String[] args) {
@@ -34,7 +35,7 @@ public class ContainsPerformanceTest {
         System.out.println("list查找用户时" + (System.currentTimeMillis() - bg) + "ms");
 
         long bg2 = System.currentTimeMillis();
-        System.out.println("set查找到:" + set.contains(666));
+        System.out.println("set查找到:" + set.contains(6666));
         System.out.println("set查找用户时" + (System.currentTimeMillis() - bg2) + "ms");
 
 
