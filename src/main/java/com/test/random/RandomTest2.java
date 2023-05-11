@@ -2,16 +2,13 @@ package com.test.random;
 
 import java.security.SecureRandom;
 
-public class RandomTest {
+public class RandomTest2 {
 
     public static void main(String[] args) {
         SecureRandom sr = new SecureRandom();
 
-
-        for (; ; ) {
-           int v =  sr.ints(2, 4).findFirst().getAsInt();
-            System.out.println(v);
-        }
+        int next = sr.nextInt(10);
+        System.out.println(next);
 
 
     }
