@@ -12,12 +12,14 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-//        Person p = new Person("a", 10);
-//
-//
-//        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("a.obj"));
-//        oos.writeObject(p);
-//        oos.close();
+        Person p = new Person("a", 10);
+        p.setVersionEnum(VersionEnum.V1);
+
+
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("a.obj"));
+
+        oos.writeObject(p);
+        oos.close();
 
 
         //  反序列化

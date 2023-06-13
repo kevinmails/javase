@@ -7,11 +7,7 @@ import java.io.Serializable;
  *         Date 2017/9/19
  *         Time 10:29
  */
-public enum  VersionEnum implements Serializable{
-
-
-
-
+public enum  VersionEnum {
 
     V1,
     V2

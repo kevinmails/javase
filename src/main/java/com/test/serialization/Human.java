@@ -1,5 +1,7 @@
 package com.test.serialization;
 
+import java.io.Serializable;
+
 /**
  * @author 陈彬
  *         Date 2017/8/20
@@ -7,7 +9,7 @@ package com.test.serialization;
  */
 
 @FunctionalInterface
-public interface Human {
+public interface Human extends Serializable {
 
     void sayHello();
 }

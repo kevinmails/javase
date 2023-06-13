@@ -1,7 +1,9 @@
 package com.test;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author kevin.chen
@@ -28,6 +30,9 @@ public class MapTest {
             System.out.println(v);
         });
 
+        Set<String>  stringSet = new HashSet<>();
 
+        System.out.println(stringSet.add("a"));
+        System.out.println(stringSet.add("a"));
     }
 }

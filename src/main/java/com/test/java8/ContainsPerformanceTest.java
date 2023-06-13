@@ -1,5 +1,7 @@
 package com.test.java8;
 
+import com.test.random.RandomUtil;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

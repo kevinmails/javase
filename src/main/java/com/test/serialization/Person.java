@@ -9,12 +9,9 @@ import java.io.Serializable;
  *         Date 2017/8/20
  *         Time 17:27
  */
-public class Person implements Human, Serializable {
+public class Person implements Human {
 
    // private static final long serialVersionUID = -6019857131461208727L;
-
-
-
 
 
 
@@ -22,6 +19,7 @@ public class Person implements Human, Serializable {
 
     private int age;
     private String abc;
+    private VersionEnum versionEnum;
 
     public String getAbc() {
         return abc;
@@ -61,6 +59,7 @@ public class Person implements Human, Serializable {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", abc='" + abc + '\'' +
+                ", versionEnum=" + versionEnum +
                 '}';
     }
 
@@ -69,5 +68,14 @@ public class Person implements Human, Serializable {
 
         System.out.println("hello!");
 
+    }
+
+    public VersionEnum getVersionEnum() {
+        return versionEnum;
+    }
+
+    public Person setVersionEnum(VersionEnum versionEnum) {
+        this.versionEnum = versionEnum;
+        return this;
     }
 }
