@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.LongAdder;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
-@OutputTimeUnit(TimeUnit.MICROSECONDS)
+@OutputTimeUnit(TimeUnit.SECONDS)
 @BenchmarkMode(Mode.Throughput)
 public class LongAdderTest {
 
@@ -25,14 +25,18 @@ public class LongAdderTest {
     public static void main(String[] args) throws RunnerException {
 
 
-        Options options = new OptionsBuilder().include(LongAdderTest.class.getName()).forks(1).build();
+        Options options = new OptionsBuilder().include(LongAdderTest.class.getName())
+                .warmupIterations(2) // 预热次数
+                .forks(1).build();
         new Runner(options).run();
 
 
     }
 
     @Benchmark
-    @Threads(10)
+//    @Threads(10)
+    @GroupThreads(10)
+    @Measurement(iterations = 5, time = 5)
     public void measureRun() {
         sum.increment();
     }
