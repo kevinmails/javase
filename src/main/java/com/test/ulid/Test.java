@@ -11,13 +11,13 @@ import org.openjdk.jmh.infra.Blackhole;
  * Time 23:06
  */
 public class Test {
-    @Benchmark
-    public void measureName(Blackhole bh) {
-
-    }
 
     public static void main(String[] args) {
 
+        String monotonicULID = ULIDUtil.monotonicULID();
+        System.out.println(monotonicULID);
+
+        System.out.println(ULIDUtil.getTimestamp(monotonicULID));
 
     }
 }
