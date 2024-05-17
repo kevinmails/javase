@@ -1,6 +1,7 @@
 package com.test.ulid;
 
 import com.test.java8.LongAdderTest;
+import com.test.random.MyUUID;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
@@ -36,5 +37,18 @@ public class ULIDUtilBenchmark {
     @Measurement(iterations = 5, time = 5)
     public String monotonicULID() {
         return ULIDUtil.monotonicULID();
+    }
+
+    @Benchmark
+    @Threads(10)
+    @Measurement(iterations = 5, time = 5)
+    public String ulid2() {
+        return MyUUID.getUUID();
+    }
+    @Benchmark
+    @Threads(10)
+    @Measurement(iterations = 5, time = 5)
+    public String ulid3() {
+        return MyUUID.getUuid();
     }
 }
