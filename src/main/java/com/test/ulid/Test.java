@@ -16,8 +16,10 @@ public class Test {
 
         String monotonicULID = ULIDUtil.monotonicULID();
         System.out.println(monotonicULID);
+        String ulid = ULIDUtil.ulid();
+        System.out.println(ulid);
 
-        System.out.println(ULIDUtil.getTimestamp(monotonicULID));
+        System.out.println(ULIDUtil.getTimestamp(ulid));
 
     }
 }
