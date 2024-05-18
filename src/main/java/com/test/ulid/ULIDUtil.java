@@ -17,7 +17,7 @@ public class ULIDUtil {
     }
 
     /**
-     * 生成一个单调递增的唯一标识符（ULID）字符串。
+     * 生成一个字符长度为26的单调递增的唯一标识符（ULID）字符串。
      *
      * @return 返回一个字符串形式的单调递增的ULID。
      */
@@ -26,7 +26,7 @@ public class ULIDUtil {
     }
 
     /**
-     * 生成一个随机的ULID（Universally Unique Lexicographically Sortable Identifier）字符串。
+     * 生成一个字符长度为26的随机的ULID（Universally Unique Lexicographically Sortable Identifier）字符串。
      * ULID是一种通用的、字典序可排序的唯一标识符生成算法。
      *
      * @return 生成的ULID字符串
