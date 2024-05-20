@@ -17,11 +17,11 @@ import java.util.Objects;
 public interface DateUtil {
 
     String DATE_PATTERN = "yyyyMMdd";
-    String DATE_PATTERN_DASH = "yyyy-MM-dd";
+    String DATE_PATTERN_HYPHEN = "yyyy-MM-dd";
     String DATE_PATTERN_SLASH = "yyyy/MM/dd";
 
     String DATE_TIME_PATTERN = "yyyyMMdd HH:mm:ss";
-    String DATE_TIME_PATTERN_DASH = "yyyy-MM-dd HH:mm:ss";
+    String DATE_TIME_PATTERN_HYPHEN = "yyyy-MM-dd HH:mm:ss";
     String DATE_TIME_PATTERN_SLASH = "yyyy/MM/dd HH:mm:ss";
 
 
@@ -48,7 +48,7 @@ public interface DateUtil {
         System.out.println(LocalTime.now());
         System.out.println(Instant.now());
 
-        System.out.println(DateUtil.format(Instant.now(), DATE_PATTERN_DASH));
+        System.out.println(DateUtil.format(Instant.now(), DATE_PATTERN_HYPHEN));
 
 
     }
