@@ -1,11 +1,13 @@
 package com.test.time;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
+import java.time.temporal.TemporalAccessor;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Objects;
 
 /**
  * @author 陈彬
@@ -13,6 +15,16 @@ import java.time.temporal.ChronoUnit;
  * Time 11:40
  */
 public interface DateUtil {
+
+    String DATE_PATTERN = "yyyyMMdd";
+    String DATE_PATTERN_DASH = "yyyy-MM-dd";
+    String DATE_PATTERN_SLASH = "yyyy/MM/dd";
+
+    String DATE_TIME_PATTERN = "yyyyMMdd HH:mm:ss";
+    String DATE_TIME_PATTERN_DASH = "yyyy-MM-dd HH:mm:ss";
+    String DATE_TIME_PATTERN_SLASH = "yyyy/MM/dd HH:mm:ss";
+
+
     public static void main(String[] args) {
 
 
@@ -35,6 +47,8 @@ public interface DateUtil {
         System.out.println(LocalDateTime.now());
         System.out.println(LocalTime.now());
         System.out.println(Instant.now());
+
+        System.out.println(DateUtil.format(Instant.now(), DATE_PATTERN_DASH));
 
 
     }
@@ -97,6 +111,8 @@ public interface DateUtil {
      * @param startDate
      * @param endDate
      * @return
+     * @throws
+     * @Description: 计算两个日期之间的天数
      */
     static long until(String startDate, String endDate) {
         LocalDate start = LocalDate.parse(startDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
@@ -105,9 +121,34 @@ public interface DateUtil {
     }
 
 
+    /**
+     * 计算当前日期与指定日期之间的毫秒数
+     *
+     * @param endDate
+     * @return
+     */
     static long until(String endDate) {
         LocalDate end = LocalDate.parse(endDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
         return LocalDate.now().until(end, ChronoUnit.MILLIS);
+    }
+
+    static String format(Date date, String pattern) {
+        Objects.requireNonNull(date, "date is null");
+        Objects.requireNonNull(pattern, "pattern is null");
+        LocalDateTime localDate = LocalDateTime.from(date.toInstant().atZone(ZoneId.systemDefault()));
+        return localDate.format(DateTimeFormatter.ofPattern(pattern));
+    }
+
+    static String format(LocalDateTime date, String pattern) {
+        Objects.requireNonNull(date, "date is null");
+        Objects.requireNonNull(pattern, "pattern is null");
+        return date.format(DateTimeFormatter.ofPattern(pattern));
+    }
+
+    static String format(Instant instant, String pattern) {
+        Objects.requireNonNull(instant, "instant is null");
+        Objects.requireNonNull(pattern, "pattern is null");
+        return instant.atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern(pattern));
     }
 
 }
