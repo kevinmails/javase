@@ -3,6 +3,8 @@ package com.test.ulid;
 import io.azam.ulidj.MonotonicULID;
 import io.azam.ulidj.ULID;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  * @author kevin.chen
  * Date 2024/5/17
@@ -32,7 +34,7 @@ public class ULIDUtil {
      * @return 生成的ULID字符串
      */
     public static String ulid() {
-        return ULID.random();
+        return ULID.random(ThreadLocalRandom.current());
     }
 
     /**
