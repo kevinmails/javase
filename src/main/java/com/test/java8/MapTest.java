@@ -1,7 +1,9 @@
 package com.test.java8;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.LongAdder;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -22,6 +24,14 @@ public class MapTest {
         longAdder.add(10L);
         longAdder.increment();
         System.out.println(longAdder.longValue());
+
+        Map<String,Object> map = new HashMap<>();
+
+//        map.put("a","a1");
+        System.out.println(map.get("a"));
+        map.replace("a","a11");
+        System.out.println(map.get("a"));
+
 
 
 

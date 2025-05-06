@@ -1,5 +1,8 @@
 package com.test;
 
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.infra.Blackhole;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;

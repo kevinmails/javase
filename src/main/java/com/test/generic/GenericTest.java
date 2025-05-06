@@ -12,6 +12,6 @@ public class GenericTest {
         Generic g = new Generic();
         g.getResult("a");
         g.getResult(123);
-        g.show(1,2);
+        g.show(1,2,"abc");
     }
 }

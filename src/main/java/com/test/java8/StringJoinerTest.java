@@ -4,11 +4,12 @@ import java.util.Arrays;
 import java.util.StringJoiner;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author 陈彬
- *         Date 2017/7/6
- *         Time 20:31
+ * Date 2017/7/6
+ * Time 20:31
  */
 public class StringJoinerTest {
 
@@ -32,9 +33,17 @@ public class StringJoinerTest {
         String collect = Arrays.asList("name", "sex").stream().collect(Collectors.joining(","));
         System.out.println(collect);
 
-        String collect2 = Arrays.asList("name", "sex").stream().map(s-> s.toLowerCase())
-                .collect(Collectors.joining());
+        String collect2 = Stream.of("name", "sex").map(String::toLowerCase).collect(Collectors.joining());
         System.out.println(collect2);
+
+        String joined = join("a", "b", "c");
+        System.out.println(joined);
+
+    }
+
+
+    public static String join(String... elements) {
+        return String.join(":", elements);
 
     }
 }

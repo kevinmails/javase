@@ -2,6 +2,7 @@ package com.test.java8;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.Temporal;
 import java.time.temporal.TemporalUnit;
@@ -15,6 +16,11 @@ public class MyDate {
 
         String now = LocalDate.now().minusDays(2).format(DateTimeFormatter.BASIC_ISO_DATE);
         System.out.println(now);
+
+        System.out.print(LocalDateTime.now());
+
+
+
 
 
 

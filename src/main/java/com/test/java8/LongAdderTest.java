@@ -34,11 +34,11 @@ public class LongAdderTest {
     }
 
     @Benchmark
-//    @Threads(10)
-    @GroupThreads(10)
+    @Threads(10)
+//    @GroupThreads(10)
     @Measurement(iterations = 5, time = 5)
     public void measureRun() {
-        sum.increment();
+        sum.decrement();
     }
 
 }

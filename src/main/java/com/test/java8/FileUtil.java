@@ -13,11 +13,13 @@ public interface FileUtil {
     static void main(String[] args) {
 
 
-        File f = new File("D:\\mydir\\新建文件夹");
-        System.out.println(f.getName());
+        File f = new File("/hello/haha");
+//        System.out.println(f.exists());
+//        System.out.println(f.getParent());
+        System.out.println(f.getPath());
 
 
-        System.out.println("创建文件夹：" + createDirs("D:\\mydir\\新建文件夹"));
+        System.out.println("创建文件夹：" + createDirs("testabcd/kevin/ah/h@$ h,h]h"));
 
 //        System.out.println("removed:" + remove(f));
 
@@ -41,7 +43,7 @@ public interface FileUtil {
         return file.delete();
     }
 
-    /**
+    /**dir
      * 创建级联文件夹
      *
      * @param dirPath
@@ -52,9 +54,9 @@ public interface FileUtil {
             return false;
         }
         File file = new File(dirPath);
-        if (file.exists()) {
-            return true;
-        }
+//        if (file.exists()) {
+//            return true;
+//        }
         return file.mkdirs();
     }
 }

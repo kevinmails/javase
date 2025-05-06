@@ -20,6 +20,11 @@ public class StringTest {
         log.info("" + Strings.isNullOrEmpty(s2));
         log.info("" + Strings.isNullOrEmpty(s3));
 
+        String s4 = "abc";
+
+        //截取长度不够会引发StringIndexOutOfBoundsException
+        s4.substring(0, 4);
+
     }
 
 
